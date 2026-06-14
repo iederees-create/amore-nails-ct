@@ -1,31 +1,12 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { db, Branch, Staff, Service } from '@/lib/db';
+import { db } from '@/lib/db';
 import { Phone, MapPin, Calendar, Clock, ArrowLeft, ArrowRight, MessageSquare, Sparkles } from 'lucide-react';
 import { generateBranchSchema } from '@/lib/seo';
 
-export default function BranchPage() {
-  const params = useParams();
-  const router = useRouter();
-  const slug = params.slug as string;
-
-  const [branch, setBranch] = useState<Branch | null>(null);
-  const [staff, setStaff] = useState<Staff[]>([]);
-  const [popularServices, setPopularServices] = useState<Service[]>([]);
-
-  useEffect(() => {
-    if (slug) {
-      const b = db.getBranchBySlug(slug);
-      if (b) {
-        setBranch(b);
-        setStaff(db.getStaffByBranch(b.id));
-        setPopularServices(db.getServices().filter((s) => s.is_popular));
-      }
-    }
-  }, [slug]);
+// In Next.js 15+, dynamic route params must be awaited
+export default async function BranchPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const branch = db.getBranchBySlug(slug);
 
   if (!branch) {
     return (
@@ -37,6 +18,9 @@ export default function BranchPage() {
       </div>
     );
   }
+
+  const staff = db.getStaffByBranch(branch.id);
+  const popularServices = db.getServices().filter((s) => s.is_popular);
 
   // Generate structured schema JSON-LD
   const schemaMarkup = generateBranchSchema(branch, staff.map((s) => s.name));
