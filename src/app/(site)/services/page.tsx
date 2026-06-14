@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useState, useTransition } from 'react';
+import { useEffect, useState, useTransition, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { db, ServiceCategory, Service, ServiceAddon, Branch } from '@/lib/db';
 import { Clock, Star, Check, CheckSquare, Square, ShoppingBag, Sparkles, Filter } from 'lucide-react';
 import { generateServiceSchema } from '@/lib/seo';
 
-export default function ServicesPage() {
+function ServicesPageContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -226,7 +226,7 @@ export default function ServicesPage() {
               onChange={(e) => setPopularOnly(e.target.checked)}
               className="accent-amore-gold h-4 w-4 rounded border-amore-gold-light/40"
             />
-            <label htmlFor="popular" className="text-xs text-amore-charcoal font-medium cursor-pointerSelect">
+            <label htmlFor="popular" className="text-xs text-amore-charcoal font-medium cursor-pointer">
               Show Bestsellers Only
             </label>
           </div>
@@ -349,5 +349,17 @@ export default function ServicesPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <Suspense fallback={
+      <div className="text-center py-24 bg-amore-cream min-h-screen">
+        <p className="text-sm font-light text-amore-charcoal/60">Loading treatment menu...</p>
+      </div>
+    }>
+      <ServicesPageContent />
+    </Suspense>
   );
 }
