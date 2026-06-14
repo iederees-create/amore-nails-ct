@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:"$Sreact.suspense"
+3:I[6163,["/amore-nails-ct/_next/static/chunks/05-c3ty_6dwfk.js","/amore-nails-ct/_next/static/chunks/14mrh2-p_w84d.js","/amore-nails-ct/_next/static/chunks/0c2tljannbls3.js","/amore-nails-ct/_next/static/chunks/0_n3a-bmw8mzj.js","/amore-nails-ct/_next/static/chunks/0_wdqee_d5n07.js"],"default"]
+4:I[97367,["/amore-nails-ct/_next/static/chunks/05-c3ty_6dwfk.js","/amore-nails-ct/_next/static/chunks/14mrh2-p_w84d.js"],"OutletBoundary"]
+0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"bg-amore-cream min-h-screen py-8 px-4 sm:px-6 lg:px-8","children":["$","$2",null,{"fallback":["$","div",null,{"className":"mx-auto max-w-3xl bg-white border border-amore-border rounded-xl shadow-lg p-12 text-center my-12 animate-pulse","children":["$","p",null,{"className":"text-sm font-light text-amore-charcoal/50","children":"Initializing secure booking engine..."}]}],"children":["$","$L3",null,{}]}]}],[["$","script","script-0",{"src":"/amore-nails-ct/_next/static/chunks/0_n3a-bmw8mzj.js","async":true}],["$","script","script-1",{"src":"/amore-nails-ct/_next/static/chunks/0_wdqee_d5n07.js","async":true}]],["$","$L4",null,{"children":["$","$2",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"RhX6wUrmmLnni1yluFUDi"}
+5:null
