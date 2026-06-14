@@ -1,0 +1,16 @@
+Hi Chantel! 🌸 
+
+I’m thrilled to share that the custom web booking platform and CMS dashboard for *Amore Nails & Beauty Lounge* is fully built and ready for review! 
+
+Here is a summary of what I’ve set up for you:
+1. **Interactive Booking Wizard**: An elegant 11-step mobile-first funnel that guides clients through branch locations, Hers/His pricing menus, custom add-ons, therapist selectors, dynamic POPIA intake forms, and lookbook photo uploads.
+2. **Client Member Portal**: A self-service area where your clients can view their upcoming bookings, reschedule or cancel appointments, and check their loyalty points balance.
+3. **Master Admin CMS Dashboard**: Your central command center to approve/complete bookings, manage your service catalog pricing and durations, update lookbook images, toggle homepage promotions, and inspect n8n notification logs.
+4. **Automated WhatsApp Reminders**: Integrated system triggers for immediate booking confirmations (with prep advice), 24h & 2h reminders, and automated review prompts.
+
+You can check out the live preview here:
+👉 https://iederees-create.github.io/amore-nails-ct/
+
+I’ve also attached a detailed **Client Pitch Deck (amore_nails_pitch_deck.md)** in the repository containing the page directories, features list, and database schemas. 
+
+Let me know what you think and when you’d like to begin configuring the live Supabase database and n8n SMS/WhatsApp tokens! 💅✨

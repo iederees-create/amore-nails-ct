@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+/* Import Elegant Typography Pairing from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --background: #FAF6F0; /* Soft warm cream background */
+  --foreground: #1C1917; /* Stone-900 charcoal primary text */
+  --primary: #1C1917;    /* Charcoal */
+  --secondary: #FAF6F0;  /* Cream */
+  --accent: #A16207;     /* Gold Accent (WCAG AA Compliant 4.5:1 on light bg) */
+  --blush: #FFF0F0;      /* Soft blush pink for highlights and cards */
+  --gold-light: #C5A880; /* Soft gold for borders and subtle icons */
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-amore-cream: #FAF6F0;
+  --color-amore-charcoal: #1C1917;
+  --color-amore-gold: #A16207;
+  --color-amore-gold-light: #C5A880;
+  --color-amore-blush: #FFF0F0;
+  --color-amore-blush-dark: #FDF2F2;
+  --color-amore-border: #F1ECE4;
+  --color-amore-blush-border: #FBCFE8;
+  
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+/* Base resets & styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Premium Custom Classes & Animations */
+
+/* Glassmorphism */
+.amore-glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 168, 128, 0.2);
+}
+
+.amore-glass-dark {
+  background: rgba(28, 25, 23, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 168, 128, 0.15);
+}
+
+/* Gold Gradient Hover */
+.gold-gradient-btn {
+  background: linear-gradient(135deg, #1C1917 0%, #2E2925 100%);
+  color: #FAF6F0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #C5A880;
+}
+
+.gold-gradient-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(197, 168, 128, 0.2), transparent);
+  transition: all 0.6s;
+}
+
+.gold-gradient-btn:hover::after {
+  left: 100%;
+}
+
+.gold-gradient-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(161, 98, 7, 0.2);
+  border-color: #A16207;
+}
+
+/* Custom premium card shadow & hover */
+.amore-card {
+  background: #ffffff;
+  border: 1px solid rgba(197, 168, 128, 0.15);
+  box-shadow: 0 4px 30px rgba(28, 25, 23, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.amore-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(161, 98, 7, 0.08);
+  border-color: rgba(161, 98, 7, 0.3);
+}
+
+/* Custom Scrollbar for Luxury Feeling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A880;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A16207;
+}
+
+/* Polished Form Inputs */
+.amore-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  border-radius: 0.375rem;
+  color: #1C1917;
+  font-size: 0.95rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.amore-input:focus {
+  outline: none;
+  border-color: #A16207;
+  box-shadow: 0 0 0 2px rgba(161, 98, 7, 0.15);
+}
+
+/* Shimmer animation for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f1ece4 25%, #FAF6F0 50%, #f1ece4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
